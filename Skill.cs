@@ -2,7 +2,7 @@
 {
     internal class Skill
     {
-        int demmage;
+        int damage;
         int energyCost;
         string name;
     }
