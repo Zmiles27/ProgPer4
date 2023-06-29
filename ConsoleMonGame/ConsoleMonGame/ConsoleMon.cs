@@ -1,21 +1,44 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace ConsoleMonGame
 {
+
+
     internal class ConsoleMon
     {
-        internal int health;
-        internal int energy;
-        internal string name = "Will";
+        public int health { get; set; }
+        public int energy { get; set; }
+        public string name { get; set; }
 
-        internal void TakeDamage(int Damage)
+        public List<Skill> skills { get; set; }
+        public Element weakness { get; set; }
+        internal void TakeDamage(int damage)
         {
-            health -= Damage;
+            this.health -= damage;
         }
 
         internal void DepleteEnergy(int energy)
         {
             this.energy -= energy;
         }
+
+        public ConsoleMon()
+        {
+        }
+
+        internal ConsoleMon(int health, int energy, string name, Element weakness)
+        {
+            this.health = health;
+            this.energy = energy;
+            this.name = name;
+            this.weakness = weakness;
+        }
     }
+
 }
